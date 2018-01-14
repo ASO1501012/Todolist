@@ -1,0 +1,15 @@
+﻿<html>
+  <head>
+    <script src="jquery.min.js"></script>
+    <script src="jquery.qrcode.min.js"></script>
+    <script type="text/JavaScript"> 
+    $(function(){
+      $("#coffee").html("");
+      $("#coffee").qrcode({text:"http://plugout.hatenablog.com/"}); 
+    });
+    </script>
+  </head>
+  <body>
+    <div id="coffee"></div>
+  </body>
+</html>

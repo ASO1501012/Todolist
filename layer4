@@ -1,0 +1,147 @@
+<?php
+session_start();
+echo  '<input type="button" value="前のフレームを表示" onClick="disp(0)">';
+echo  '<input type="button" value="次のフレームを表示" onClick="disp(1)">';
+$maxArray = 64;
+	$secondArray = array();
+	if(isset($_POST['led0'])){
+        $led0Array = arrayCreate($_POST['led0']);
+		array_push($secondArray, $led0Array);
+	}else{
+        $led0Array = arrayCreate2();
+		array_push($secondArray, $led0Array);
+	}
+	if(isset($_POST['led1'])){
+        $led1Array = arrayCreate($_POST['led1']);
+		array_push($secondArray, $led1Array);
+	}else{
+        $led1Array = arrayCreate2();
+		array_push($secondArray, $led1Array);
+    }
+	if(isset($_POST['led2'])){
+        $led2Array = arrayCreate($_POST['led2']);
+		array_push($secondArray, $led2Array);
+	}else{
+        $led2Array = arrayCreate2();
+		array_push($secondArray, $led2Array);
+    }
+	if(isset($_POST['led3'])){
+        $led3Array = arrayCreate($_POST['led3']);
+		array_push($secondArray, $led3Array);
+	}else{
+        $led3Array = arrayCreate2();
+		array_push($secondArray, $led3Array);
+    }
+	if(isset($_POST['led4'])){
+        $led4Array = arrayCreate($_POST['led4']);
+		array_push($secondArray, $led4Array);
+	}else{
+        $led4Array = arrayCreate2();
+		array_push($secondArray, $led4Array);
+    }
+	if(isset($_POST['led5'])){
+        $led5Array = arrayCreate($_POST['led5']);
+		array_push($secondArray, $led5Array);
+	}else{
+        $led5Array = arrayCreate2();
+		array_push($secondArray, $led5Array);
+    }
+	if(isset($_POST['led6'])){
+        $led6Array = arrayCreate($_POST['led6']);
+		array_push($secondArray, $led6Array);
+	}else{
+        $led6Array = arrayCreate2();
+		array_push($secondArray, $led6Array);
+    }
+	if(isset($_POST['led7'])){
+        $led7Array = arrayCreate($_POST['led7']);
+		array_push($secondArray, $led7Array);
+	}else{
+        $led7Array = arrayCreate2();
+		array_push($secondArray, $led7Array);
+    }
+    
+    $_SESSION['hairetu'][0] = $secondArray;
+    //var_dump($_SESSION['hairetu'][0]);
+
+$checkArray = array();
+array_push($checkArray,$led0Array);
+array_push($checkArray,$led1Array);
+array_push($checkArray,$led2Array);
+array_push($checkArray,$led3Array);
+array_push($checkArray,$led4Array);
+array_push($checkArray,$led5Array);
+array_push($checkArray,$led6Array);
+array_push($checkArray,$led7Array);
+$_SESSION['check'][0] = $checkArray;
+//var_dump($_SESSION['check'][0]);
+
+function arrayCreate($arrayNum){
+    $aC = array();
+    for($i = 0; $i < 64; $i++){
+        $aC[$i] = 0;
+        foreach($arrayNum as $value){
+            if($i == $value){
+                $aC[$value] = 1;
+            }
+        }
+    }
+    return $aC;
+}
+
+function arrayCreate2(){
+    $aC = array();
+    for($i = 0; $i < 64; $i++){
+        $aC[$i] = 0;
+    }
+    return $aC;
+}
+
+?>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Document</title>
+	<script src="./jquery-3.1.1.min.js"></script>
+</head>
+<body>
+	<form action="index.php" method="post">
+		<?php
+		$scale = 8;
+		$now = 0;
+		for($i = 0; $i < $scale; $i++){
+			echo $now;
+			$x = 0;
+			for($j = 0; $j < $scale; $j++){
+				for($k = 0; $k < $scale; $k++){
+					if($_SESSION['check'][0][$i][$x] == 1){
+						$_SESSION['check'][0][$i][$x] = "checked";
+					}
+					echo '<input type="checkbox" name="led'.$now.'[]" value="'. $x .'"' . $_SESSION['check'][0][$i][$x] . '>' . $x;
+					$x++;
+				}
+				echo '<br>';
+			}
+			echo '<br>';
+			$now++;
+		}
+		?>
+		<input type="submit">
+	</form>
+
+    <script>
+        function disp(num){
+            if(num == 0){
+                location.href = "http:/jk2/hackU/index.php";
+            }else{
+                location.href = "http:/jk2/hackU/layer2.php";
+            }
+
+		}
+
+    </script>
+</body>
+</html>

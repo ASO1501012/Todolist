@@ -1,0 +1,172 @@
+.img {
+    background-color: #6666FF;
+    border: none;
+    color: #FFFFFF;
+    font-size: 25px;
+    border-radius: 10px;
+}
+
+.btn-color {
+    background-color: #FFCCCC;
+    border-radius: 20px;
+}
+
+.btn-color2 {
+    background-color: #b0c4de;
+    border-radius: 20px;
+}
+
+.work {
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+    font-size: 30px;
+    text-align: left;
+    border-radius: 10px;
+    width: 350px
+}
+
+.kigen {
+    background-color: #FFCCCC;
+    font-size: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.doday {
+    float: right;
+    background-color: rgba(0, 0, 0, 0);
+    font-size: 15px;
+    margin-top: 8px;
+    margin-right: 3px;
+}
+
+.complete {
+    text-align: right;
+    background-color: #0066CC;
+    color: #FFFFFF;
+    font-size: 16px;
+    border-radius: 4px;
+    width: 80px;
+    float: right;
+    border: none;
+}
+
+.complete2 {
+    text-align: right;
+    background-color: #0066CC;
+    color: #FFFFFF;
+    font-size: 16px;
+    border-radius: 4px;
+    width: 80px;
+    float: right;
+    border: none;
+    margin-right: 60px;
+}
+
+.info {
+    width: 750px;
+    border-bottom: dotted 2px #C0C0C0;
+}
+
+.in {
+    background-color: #6666FF;
+    border: none;
+    color: #FFFFFF;
+    font-size: 25px;
+    border-radius: 35px;
+    -moz-border-radius: 35px;
+    -webkit-border-radius: 35px;
+    margin-top: 50px;
+    position: fixed;
+    top: 87%;
+    left: 50%;
+}
+
+footer {
+    border: 5px solid #fff;
+    height: 100px;
+    width: 90px;
+    margin: auto;
+}
+
+center {
+    text-align: center;
+}
+
+input:focus {
+    outline: none;
+}
+
+.daimei {
+    font-size: 30px;
+    border-bottom: solid;
+}
+
+.complist {
+    font-size: 20px;
+}
+
+.tagu {
+    border-bottom: dotted 2px #C0C0C0;
+}
+
+#loader-bg {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    background: #000;
+    z-index: 1;
+}
+
+#loader {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    height: 200px;
+    margin-top: -100px;
+    margin-left: -100px;
+    text-align: center;
+    color: #fff;
+    z-index: 2;
+}
+
+.snow_box {
+    background-color: #000;
+    background-image: url(./img/snow.png), url(./img/snow2.png), url(./img/snow3.png);
+    -webkit-animation: snow 20s linear infinite;
+    animation: snow 20s linear infinite;
+    width: 300px;
+    height: 300px;
+    margin-bottom: 36px;
+}
+
+@-webkit-keyframes snow {
+    0% {
+        background-position: 0px 0px, 0px 0px, 0px 0px
+    }
+    50% {
+        background-color: #b4cfe0
+    }
+    100% {
+        background-position: 500px 1000px, 400px 400px, 300px 300px;
+        background-color: #6b92b9;
+    }
+}
+
+@keyframes snow {
+    0% {
+        background-position: 0px 0px, 0px 0px, 0px 0px
+    }
+    50% {
+        background-color: #b4cfe0
+    }
+    100% {
+        background-position: 500px 1000px, 400px 400px, 300px 300px;
+        background-color: #6b92b9;
+    }
+}
